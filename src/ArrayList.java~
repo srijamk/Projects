@@ -1,0 +1,8 @@
+import java.util.ArrayList;
+
+class Main {
+    public static void main (String [] args) {
+        ArrayList <String> list = new <String> ArrayList();
+        System.out.println("Please enter words, enter STOP to stop the loop.");
+    }
+}

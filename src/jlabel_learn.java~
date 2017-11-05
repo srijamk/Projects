@@ -1,0 +1,7 @@
+import javax.swing.JLabel;
+
+public jlabel {
+    public static void main (String [] args) {
+        JLabel hello = new JLabel(ImageIcon("Fish1.gif"));
+    }
+}

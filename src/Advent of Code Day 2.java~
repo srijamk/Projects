@@ -1,0 +1,27 @@
+import java.io.*;
+import static java.lang.System.*;
+import java.util.Scanner;
+import java.lang.Math;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+class Santa_Part_1 {
+    public static int paper (int a, int b, int c) {
+        int first_side = 2 * a * b;27
+        int second_side = 2 * a * c;
+        int third_side = 2 * b * c;   
+        return Math.min(Math.min(first_side / 2, second_side / 2), third_side / 2) + first_side + second_side + third_side;
+    }
+    
+    public static void main (String[] args) {
+        Scanner scan = new Scanner (System.in);
+        int counter = 0;
+        for (int i = 0; i <= 99; i++) {
+            System.out.println("Enter three numbers: ");
+            int a = scan.nextInt();
+            int b = scan.nextInt();
+            int c = scan.nextInt();
+            counter += paper(a, b, c);
+        }
+        System.out.println("The elves should order a total of " + counter + "square feet of wrapping paper. ");
+    }
+}

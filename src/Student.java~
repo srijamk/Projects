@@ -1,0 +1,21 @@
+public class Student extends Person {
+    private int level;
+    private int studentId = 1;
+    static int id = 1;
+    public Student (String fName, String lName, int gLevel) {
+        super(fName, lName);
+        if (gLevel >= 0 && gLevel <= 12) {
+            level = gLevel;
+        } else {
+            level = 0;
+        }
+        studentId = id;
+        id++;
+    }
+    public int getLevel() {
+        return level;
+    }
+    public String toString() {
+        return super.toString() + "\n\tGrade Level: " + level + "\n\tID #: " + studentId;
+    }
+}

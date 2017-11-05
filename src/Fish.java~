@@ -1,0 +1,29 @@
+
+public class Fish {
+
+ int minX;  //Coordinate defined as bottom left hand corner of  tank
+ int minY;
+ int size;
+
+
+ public Fish(int ystart, int xstart, int size){
+  minX=xstart;
+  minY=ystart;
+ }
+
+ public void movement(int direction){
+  if (direction==1){
+   minX+=1;
+  }else if (direction==2){
+   minX-=1;
+  }else if (direction==3){
+   minY+=1;
+  }else if (direction==4){
+   minY-=1;
+  }
+ }
+
+
+}
+
+

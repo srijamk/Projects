@@ -1,0 +1,3 @@
+class LeapYear {
+    public static leap_year()
+}

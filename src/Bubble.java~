@@ -1,0 +1,14 @@
+import java.io.*;
+import java.util.*;
+
+class Bubble {
+    public static boolean bubbleSort (int [] arr, int start) {
+        if (!bubbleSort(arr, start + 1) && start == arr.length) {
+            return false;
+        }
+        if (bubbleSort(arr, start + 1) && start == arr.length) {
+            return true;
+        }
+        if (arr[start])
+    }
+}

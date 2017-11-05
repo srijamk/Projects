@@ -1,0 +1,8 @@
+class Playing_Card {
+    private hi = 3;
+    public Playing_Card (int age) {
+      hi = 0;
+    }
+}
+
+card = new Playing_Card(3);

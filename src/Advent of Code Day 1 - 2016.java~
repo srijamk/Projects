@@ -1,0 +1,75 @@
+ import java.io.*;
+import static java.lang.System.*;
+import java.util.Scanner;
+import java.io.IOException;
+import java.io.FileReader;
+import java.io.BufferedReader;
+import java.lang.Math;
+import java.util.ArrayList;
+
+class Day_1_Part_1 {
+    public static void main (String [] args) {
+        String line = "R8, R4, R4, R8";
+        String [] split_line = line.split(", ");
+        boolean change_x = false;
+        int facing_dir = 0;
+        // 0 - North, 1 - East, 2 - South, 3 - West
+        int x_pos = 0;
+        int y_pos = 0;
+        ArrayList <String> list = new ArrayList <String>();
+        for (int i = 0; i < split_line.length; i++) {
+            change_x = !change_x;
+            int change_amt = Integer.parseInt(split_line[i].substring(1));
+            String dir = "" + split_line[i].charAt(0);
+            if (facing_dir < 3 && dir.equals("R")) {
+                facing_dir++;
+            } else if (facing_dir == 3 && dir.equals("R")) {
+                facing_dir = 0;
+            } else if (facing_dir > 0 && dir.equals("L")) {
+                facing_dir--;
+            } else {
+                facing_dir = 3;
+            }
+            
+            
+            if (change_x == true) {
+                if (facing_dir == 1) {
+                    for (i = 0; i <= change_amt; i++) {
+                        if (!(list.contains("" + (x_pos + i) + "" + y_pos))) {
+                            list.add("" + (x_pos + i) + "" + y_pos);
+                        }
+                    }
+                    x_pos += change_amt;
+                } else if (facing_dir == 3) {
+                    for (i = 0; i <= change_amt; i++) {
+                        if (!(list.contains("" + (x_pos - i) + "" + y_pos))) {
+                            list.add("" + (x_pos - i) + "" + y_pos);
+                        }
+                    }
+                    x_pos -= change_amt;
+                }
+            } else {
+                if (facing_dir == 0) {
+                    for (i = 0; i <= change_amt; i++) {
+                        if (!(list.contains("" + x_pos + "" + (y_pos + i)))) {
+                            list.add("" + x_pos + "" + (y_pos + i));
+                        }
+                    }
+                    y_pos += change_amt;
+                } else if (facing_dir == 2) {
+                    for (i = 0; i <= change_amt; i++) {
+                        if (!(list.contains("" + x_pos + "" + (y_pos - i)))) {
+                            list.add("" + x_pos + "" + (y_pos - i));
+                        }
+                    }
+                    y_pos -= change_amt;
+                }
+                
+            }
+            
+        }
+        for (int j = 0; j < list.size(); j++) {
+            System.out.println(list.get(j));
+        }
+    }
+}

@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+class Lesson_34_Activity_One {
+  
+   public static int sum(int [] a)
+    {
+    //Write your code here
+    //Change the return value as you see fit
+     return 0; 
+    }
+  
+    public static void main(String[] args)
+     {
+     /*
+      * Test your method here
+      */
+    }
+}

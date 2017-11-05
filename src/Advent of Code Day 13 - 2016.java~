@@ -1,0 +1,8 @@
+import java.io.*;
+import java.util.*;
+
+class Day_13_Part_1 {
+    public static int get_num (int favorite_number, int x, int y) {
+        
+    }
+}

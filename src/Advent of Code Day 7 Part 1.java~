@@ -1,0 +1,112 @@
+import java.lang.Integer;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+class Advent_of_Code_Day_7 {
+    //ArrayList <String> 
+    public static String to_binary (int num) {
+        if (num == 0) {
+            return "" + num;
+        }
+        int x = 1;
+        int highest_power = 0;
+        String binary = "";
+        while (true) {
+            if (x > num) {
+                highest_power = x / 2;
+                break;
+            }
+            x *= 2;
+        }
+        while (highest_power > 0) {
+            if (num >= highest_power) {
+                binary += "" + (num / highest_power);
+            } else {
+                binary += "0";
+            }
+            num -= ((num / highest_power) * highest_power);
+            highest_power /= 2;
+        }
+        
+        
+        return binary;
+    }
+    public static String bit_rshift (String binary) {
+        // 1010 -> 0101
+        // 0 -> 0
+        // 10001 -> 01000
+        
+        return "0" + binary.substring(0, binary.length() - 1);
+    }
+    public static String bit_lshift (String binary) {
+        // 1010 -> 0100
+        // 0 -> 0
+        // 10001 -> 00010
+        
+        return binary.substring(1) + "0";
+    }
+    public static String bit_and (String binary, String binary2) {
+        // 1010 1100 -> 1000
+        // 0 1 -> 0
+        // 10001 01110 -> 00000
+        String result = "";
+        for (int index = 0; index < binary.length(); index++) {
+            result += ("" + ((Integer.parseInt(binary.substring(index, index + 1))) * (Integer.parseInt(binary2.substring(index, index + 1)))));
+        }
+        return result;
+    }
+    public static String bit_or (String binary, String binary2) {
+        // 1010 1100 -> 1110
+        // 0 1 -> 1
+        // 10001 01110 -> 11111
+        String result = "";
+        for (int index = 0; index < binary.length(); index++) {
+            if (binary.charAt(index) == '1' || binary2.charAt(index) == '1') {
+                result += "1";
+            } else {
+                result += "0";
+            }
+        }
+        return result;
+    }
+    public static String bit_not (String binary) {
+        // 1111 -> 0000
+        // 0 -> 1
+        // 1010 -> 0101
+        String result = "";
+        for (int i = 0; i < binary.length(); i++) {
+            if (binary.charAt(i) == '1') {
+                result += "0";
+            } else {
+                result += "1";
+            }
+        }
+        return result;
+    }
+    public static void answer () {
+        try {
+            FileInputStream in = new FileInputStream("advent_day_7_part_1_input.txt");
+            BufferedReader br = new BufferedReader(new InputStreamReader(in));        
+            String line;
+            int count = 0;
+            while ((line = br.readLine()) != null) {
+                
+                if (line.substring(0, line.indexOf(" ")).matches("-?\\d+(\\.\\d+)?") && line.substring(line.indexOf(" "), line.indexOf(" ") + 3).equals(" ->")) {
+                    System.out.println("Line Number " + count + ": " + line.substring(0, line.indexOf(" ")));
+                }
+                count++;
+            }
+            br.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public static void main (String [] args) {
+        System.out.println(to_binary(2));
+        System.out.println(bit_lshift("0"));
+        System.out.println(bit_or("0", "1"));
+        System.out.println(bit_not("1010"));
+        answer();
+    }
+}

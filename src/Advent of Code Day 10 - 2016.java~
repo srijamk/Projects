@@ -1,0 +1,13 @@
+import java.io.*;
+import static java.lang.System.*;
+import java.io.FileReader;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.lang.Math;
+import java.util.ArrayList;
+
+class Day_10_Part_1 {
+    public static void main (String [] args) throws IOException {
+    
+    }
+}

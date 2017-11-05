@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;HoCo Hacks 2016/src/HoCo Map&apos; to &apos;Chesapeake Game&apos;" description="Rename resource &apos;HoCo Map&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/HoCo Map" name="Chesapeake Game" stamp="1460817755205" updateReferences="true"/>
+</session>

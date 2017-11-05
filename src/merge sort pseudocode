@@ -1,0 +1,32 @@
+
+def mergesort (n)
+
+list = range n
+
+return sort(list, 0, n)
+
+
+def sort (list lo hi)
+
+  n = hi - lo # 4 = 4 - 0
+  if (n <= 1)
+    return
+
+  mid = lo + hi / 2 # mid = 2
+
+  sort (range lo mid, lo, mid )
+  sort (range mid hi, mid, hi)
+
+  temp = range (0, n)
+  i = lo # 0 first lement of first list
+  j = mid # 2 first element of second  list
+  for k in range (0, n # 4)
+    current
+    else if list[j] < list [i]:
+      current = list[j++]
+    else
+      current = list[i++]
+      j = 3 i = 1
+
+      result[k] = current
+    

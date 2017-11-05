@@ -1,0 +1,10 @@
+class parenBit {
+    public String parenBit(String str) {
+        int counter = 0;
+        if (str.length() < 2) {
+            return "";
+        } else {
+            
+        }
+    }
+}

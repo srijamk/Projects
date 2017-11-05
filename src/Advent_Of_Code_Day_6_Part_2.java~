@@ -1,0 +1,8 @@
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+
+class Advent_Of_Code_Day_6_Part_2 {
+    
+}

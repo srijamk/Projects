@@ -1,0 +1,10 @@
+import java.io.*;
+import static java.lang.System.*;
+import java.util.Scanner;
+import java.lang.Math;
+
+class Lesson_36_Notes {
+    public static void main (String[] args) {
+        if (n > 1)
+    }
+}

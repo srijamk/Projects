@@ -1,0 +1,17 @@
+import java.io.*;
+import static java.lang.System.*;
+import java.util.Scanner;
+
+class Lesson_22_Activity_Two {
+  
+    public static void main (String str[]) throws IOException {
+        Scanner scan = new Scanner (System.in);
+        int index = 0;
+        System.out.println("Enter a string: ");
+        String word = scan.nextLine();
+        while (index < word.length()) {
+            System.out.println(word.substring(index, index + 1));
+            index++;
+        }
+    }
+}

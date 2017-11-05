@@ -1,0 +1,10 @@
+class evenOdd {
+    public int[] evenOdd(int[] nums) {
+        int [] arr = new int [nums.length];
+        ArrayList <Integer> evens = new <Integer> ArrayList();
+        ArrayList <Integer> evens = new <Integer> ArrayList();
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] % )
+        }
+    }
+}

@@ -1,0 +1,10 @@
+import java.io.*;
+import static java.lang.System.*;
+import java.util.Scanner;
+
+
+public class test_time {
+    public static void main (String str[]) throws IOException {
+        Time t1 = new Time (2, 3);
+    }
+}

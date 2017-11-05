@@ -1,0 +1,29 @@
+import java.util.Scanner;
+import java.io.*;
+
+class Lesson_33_Activity_Four {
+  
+    public static void reverse (int [] nums) {
+        int [] result = new int [nums.length];
+        for (int i = 1; i <= nums.length; i++) {
+            int highest_num = nums[nums.length - 1];
+            System.out.println(highest_num);
+            for (int j = nums.length - 1; j > 0; j--) {
+                System.out.println(nums[j] + " becomes " + nums[j - 1]);
+                nums[j] = nums[j - 1];
+                
+            }
+            nums[0] = highest_num;
+            System.out.println("Highest Num: " + nums[0]);
+        }
+        
+    }
+  
+    public static void main(String[] args) {
+        int [] letters = {1, 2, 3};
+        reverse(letters);
+        for (int i = 0; i < letters.length; i++) {
+            System.out.print(letters[i] + " ");
+        }
+    }
+}

@@ -1,0 +1,77 @@
+import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
+import javax.swing.JFrame;
+import javax.swing.Timer;
+
+
+public class Test implements KeyListener{
+
+	static JFrame frame=new JFrame("Game");
+	static Background background;
+	static Test test; 
+	static Fish fishy;
+
+	static ActionListener timertask = new ActionListener() {
+		public void actionPerformed(ActionEvent evt) {
+			test.refresh();
+		}
+	};
+	static Timer timer=new Timer(10, timertask)	;
+
+	public Test(){
+		fishy=new Fish(400,400,1);
+		background=new Background();
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		background.setPreferredSize(new Dimension(800,800));
+
+		frame.add(background);
+		frame.addKeyListener(this);
+		frame.pack();
+		frame.setVisible(true);
+		timer.start();
+	}
+
+	public static void refresh(){
+		frame.remove(background);
+		background=new Background();
+		background.setPreferredSize(new Dimension(800,800));
+		frame.add(background);
+		frame.pack();
+	}
+
+	public void keyPressed(KeyEvent keyboard) {
+		/* -> 39
+		 * <- 37
+		 * down 40
+		 * up 38
+		 * space 32
+		 */
+		if (keyboard.getKeyCode()==37){
+			fishy.movement(2);
+		}else if (keyboard.getKeyCode()==39){
+			fishy.movement(1);
+		}else if (keyboard.getKeyCode()==38){
+			fishy.movement(3);
+		}else if (keyboard.getKeyCode()==40){
+			fishy.movement(4);
+		}
+	}
+
+	public void keyReleased(KeyEvent arg0) {
+
+	}
+
+	public void keyTyped(KeyEvent arg0) {
+
+	}
+
+	public static void main(String[]args){
+		test=new Test();
+	}
+}
+
+

@@ -1,0 +1,32 @@
+public interface IAmAProgrammer {
+  void DoProgramming();   
+}
+
+public interface IAmAFather {
+    void TeachKids();
+}
+
+public class Person {
+    public int age {
+        
+    }
+}
+
+public class Programmer extends Person 
+    Implements IAmAProgrammer
+
+{
+    
+}
+
+
+public class FamilyPerson extends Person 
+    Implements IAmAProgrammer, IAmAFather
+
+{
+    
+}
+
+
+
+    

@@ -1,0 +1,13 @@
+import java.io.*;
+import java.util.*;
+
+class String {
+    
+    public static String print (String s) {
+        System.out.println(s);
+    }
+    
+    public static void main (String [] args) {
+        
+    }
+}

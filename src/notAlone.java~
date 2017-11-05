@@ -1,0 +1,5 @@
+class notAlone {
+    public int[] notAlone(int[] nums, int val) {
+  
+    }
+}

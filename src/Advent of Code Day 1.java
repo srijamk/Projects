@@ -1,0 +1,56 @@
+ import java.io.*;
+import static java.lang.System.*;
+import java.util.Scanner;
+import java.io.IOException;
+import java.io.FileReader;
+import java.io.BufferedReader;
+
+class Santa_part_1 {
+    public static int floor (String a) {
+        int floor_number = 0;
+        for (int i = 0; i < a.length(); i++) {
+            if (a.charAt(i) == '(') {
+                floor_number++;
+            } else {
+                floor_number--;
+            }
+        }
+        return floor_number;
+    }
+    
+    public static void main (String[] args) {
+        Scanner scan = new Scanner (System.in);
+        System.out.println("Input floor instructions for Santa: ");
+        String instructions = scan.nextLine();
+        
+        System.out.println("Santa should go to Floor " + floor(instructions) + ".");
+    }
+}
+
+class Santa_part_2 {
+    public static int floor (String a) {
+        int floor_number = 0;
+        while (floor_number >= 0) {
+            for (int i = 0; i < a.length(); i++) {
+                if (a.charAt(i) == '(') {
+                    floor_number++;
+                } else {
+                    floor_number--;
+                }
+                if (floor_number < 0) {
+                    return i + 1;
+                }
+            }
+            
+        }
+        return 0;
+        
+    }
+    public static void main (String[] args) {
+        Scanner scan = new Scanner (System.in);
+        System.out.println("Input floor instructions for Santa: ");
+        String instructions = scan.nextLine();
+        
+        System.out.println("Santa goes to negative floors at character " + floor(instructions) + ".");
+    }    
+}

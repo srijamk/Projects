@@ -1,0 +1,25 @@
+class Lesson_17_Activity {
+    public static boolean isSorted (int [] a) {
+        for (int i = 0; i < a.length - 1; i++) {
+            if (a[i] > a [i + 1]) {
+                return false;
+            }    
+        }
+        return true;
+    }    
+    public static int binarySearch (int [] a, int b) {
+        int low = 0;
+        int high = a.length - 1;
+        int mid = (high - low) / 2;
+        while (b != mid) {
+            if (b > mid) {
+                low = mid;
+            } else if (b < mid) {
+                high = mid;
+            } else {
+                return mid;
+            }
+        }
+        return -1;
+    }
+}

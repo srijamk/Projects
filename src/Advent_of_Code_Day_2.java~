@@ -1,0 +1,37 @@
+import java.io.*;
+import static java.lang.System.*;
+import java.util.Scanner;
+import java.io.IOException;
+import java.io.FileReader;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+
+class Santa_Part_1 {
+    public static int paper (int a, int b, int c) {
+        int first_side = 2 * a * b;
+        int second_side = 2 * a * c;
+        int third_side = 2 * b * c;   
+        return Math.min(Math.min(first_side / 2, second_side / 2), third_side / 2) + first_side + second_side + third_side;
+    }
+    
+    public static void main (String[] args) {
+        
+        FileInputStream fstream = new FileInputStream("advent_of_code_day_2_file.txt");
+        BufferedReader br = new BufferedReader(new InputStreamReader(fstream)); 
+        String line;
+        while ((line = br.readLine()) != null) {
+            System.out.println(line);
+        }
+        br.close();    
+        
+        Scanner scan = new Scanner (System.in);
+        int counter = 0;
+        System.out.println("Enter three numbers: ");
+        int a = scan.nextInt();
+        int b = scan.nextInt();
+        int c = scan.nextInt();
+        counter += paper(a, b, c);
+        System.out.println("The elves should order a total of " + counter + "square feet of wrapping paper. ");
+    }
+    
+}

@@ -1,0 +1,12 @@
+public class School {
+    private String firstName, lastName;
+    
+    public School (String fName, String lName) {
+        firstName = fName;
+        lastName = lName;
+    }
+    public String toString() {
+        return "" + lastName + ", " + firstName;
+    }
+}
+
